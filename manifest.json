@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "JWGL-Helper",
+    "version": "1.0.0",
+    "description": "OUC选课小工具，可以快速查看课程均分，老师给分，多门课程间对比等",
+    "icons": {
+        "16": "img/16x16.png",
+        "48": "img/48x48.png",
+        "128": "img/128x128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://jwgl2.ouc.edu.cn/student/wsxk.kcbcx.html?menucode=JW130414",
+                "http://jwgl.ouc.edu.cn/student/wsxk.kcbcx.html?menucode=JW130414"
+            ],
+            "js": [
+                "scripts/jquery-3.4.1.min.js",
+                "scripts/echarts.min.js",
+                "scripts/datatable.js",
+                "scripts/wsxk.js",
+                "scripts/main.js"
+            ],
+            "run_at": "document_end",
+            "all_frames": true
+        }
+    ],
+    "action": {
+        "default_icon": "img/32x32.png"
+    },
+    "permissions": [
+        "tabs"
+    ]
+}
